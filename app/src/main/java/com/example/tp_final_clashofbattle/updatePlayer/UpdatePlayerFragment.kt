@@ -48,10 +48,12 @@ class UpdatePlayerFragment : Fragment() {
             binding.etNomPlayer.setText(it.name)
             binding.etUrlImagePlayer.setText(it.imageUrl)
             binding.tvCompetence1.text = it.capability1.name
-            binding.tvCompetence1.setTextColor(it.capability1.color) =
-
+            binding.tvCompetence1.setTextColor(it.capability1.getColor(requireContext()))
             binding.tvCompetence2.text = it.capability2.name
+            binding.tvCompetence2.setTextColor(it.capability1.getColor(requireContext()))
             binding.tvCompetence3.text = it.capability3.name
+            binding.tvCompetence3.setTextColor(it.capability1.getColor(requireContext()))
+
         }
 
 
