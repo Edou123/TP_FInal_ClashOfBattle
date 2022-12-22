@@ -29,19 +29,6 @@ abstract class AppDatabase : RoomDatabase() {
                 "la_base_de_donnees"
             )
                 .fallbackToDestructiveMigration()
-                .addCallback(object : RoomDatabase.Callback() {
-                    override fun onCreate(db: SupportSQLiteDatabase) {
-                        super.onCreate(db)
-
-
-                        var dao = INSTANCE?.playerDao();
-                        GlobalScope.launch {
-                            for (trip in defaultTrips){
-                                dao?.insert(trip)
-                            }
-                        }
-                    }
-                })
                 .build()
         }
 
