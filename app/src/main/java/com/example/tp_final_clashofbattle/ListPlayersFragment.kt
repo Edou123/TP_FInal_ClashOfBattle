@@ -44,7 +44,9 @@ class ListPlayersFragment : Fragment() {
         val adapter = PlayerAdapter()
         binding.rvPlayer.adapter = adapter
 
-        adapter.submitList(viewModel.ListPlayers)
+        viewModel.listPlayersAffichage.observe(viewLifecycleOwner){
+            adapter.submitList(it)
+        }
 
     }
 
