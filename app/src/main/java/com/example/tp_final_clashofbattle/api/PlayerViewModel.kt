@@ -24,9 +24,6 @@ class PlayerViewModel :ViewModel(){
         }
     }
 
-    fun getPlayersBDD() : LiveData<List<Player>>{
-        return  AppDatabase.INSTANCE!!.playerDao().getAll()
-    }
 
 
 }
