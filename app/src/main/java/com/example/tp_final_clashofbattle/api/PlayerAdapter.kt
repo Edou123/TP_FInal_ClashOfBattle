@@ -58,11 +58,11 @@ class PlayerViewHolder private constructor(val binding: ViewCardPlayerBinding) :
             "HEAL" -> soin++
         }
 
-        if (attaque == 2) {
+        if (attaque >= 2) {
             binding.TVNomClasse.text = Job.WARRIOR.name
-        } else if (defense == 2) {
+        } else if (defense >= 2) {
             binding.TVNomClasse.text = Job.KNIGHT.name
-        } else if (soin == 2) {
+        } else if (soin >= 2) {
             binding.TVNomClasse.text = Job.PRIEST.name
         }else{
             binding.TVNomClasse.text = Job.BARD.name
