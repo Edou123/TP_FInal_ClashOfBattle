@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.tp_final_clashofbattle.api.PlayerAdapter
+import com.example.tp_final_clashofbattle.api.PlayerViewModel
 import com.example.tp_final_clashofbattle.databinding.FragmentListplayersBinding
 
 /**
@@ -19,6 +22,12 @@ class ListPlayersFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private lateinit var viewModel: PlayerViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?){
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(PlayerViewModel::class.java)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,9 +41,11 @@ class ListPlayersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-//        }
+        val adapter = PlayerAdapter()
+        binding.rvPlayer.adapter = adapter
+
+        adapter.submitList(viewModel.ListPlayers)
+
     }
 
     override fun onDestroyView() {

@@ -1,5 +1,6 @@
 package com.example.tp_final_clashofbattle.api
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.democlashofbattle.models.Player
@@ -23,6 +24,10 @@ class PlayerViewModel :ViewModel(){
             //Rajouter le replace de la DAO
             dao.replace(playerList)
         }
+    }
+
+    fun getPlayersBDD() : LiveData<List<Player>>{
+        return  AppDatabase.INSTANCE!!.playerDao().getAll()
     }
 
 

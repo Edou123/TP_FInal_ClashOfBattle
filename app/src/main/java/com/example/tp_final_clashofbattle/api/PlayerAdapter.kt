@@ -10,12 +10,12 @@ import com.example.democlashofbattle.models.Player
 import com.example.tp_final_clashofbattle.databinding.ViewCardPlayerBinding
 import com.example.tp_final_clashofbattle.utils.loadImage
 
-class PlayerAdapter(val clickListener: (String) -> Unit) : ListAdapter<Player, PlayerViewHolder>(
+class PlayerAdapter: ListAdapter<Player, PlayerViewHolder>(
     PlayerDiffCallback()
 ) {
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
         val item = getItem(position)
-        holder.bind(clickListener, item)
+        holder.bind(item)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
@@ -26,7 +26,7 @@ class PlayerAdapter(val clickListener: (String) -> Unit) : ListAdapter<Player, P
 class PlayerViewHolder private constructor(val binding: ViewCardPlayerBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(clickListener: (String) -> Unit, item: Player) {
+    fun bind(item: Player) {
         binding.TVNom.text = item.name
         loadImage(binding.IVImage, item.imageUrl)
         val capacite1 = item.capability1.type.name

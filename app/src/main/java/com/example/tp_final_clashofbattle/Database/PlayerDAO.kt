@@ -1,6 +1,7 @@
 package com.example.tp_final_clashofbattle.Database
 
 import android.text.method.TextKeyListener.clear
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.democlashofbattle.models.Player
 
@@ -9,7 +10,7 @@ import com.example.democlashofbattle.models.Player
 interface PlayerDAO{
 
     @Query("SELECT * FROM Player ORDER BY name")
-    suspend fun getAll(): List<Player>
+    fun getAll(): LiveData<List<Player>>
 
     @Update
     suspend fun update(player: Player)
