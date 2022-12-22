@@ -27,6 +27,7 @@ class ListPlayersFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PlayerViewModel::class.java)
+        viewModel.getPlayers()
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,9 +43,12 @@ class ListPlayersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = PlayerAdapter()
+
         binding.rvPlayer.adapter = adapter
 
-
+        viewModel.listPlayer.observe(viewLifecycleOwner){
+            adapter.submitList(it)
+        }
 
     }
 
