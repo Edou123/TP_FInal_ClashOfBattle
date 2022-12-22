@@ -29,4 +29,7 @@ interface PlayerDAO{
         clear()
         insertAll(players)
     }
+
+    @Query("SELECT * FROM Player WHERE remoteId= :remoteId")
+    fun getPlayerByData(remoteId : String): LiveData<Player>
 }
