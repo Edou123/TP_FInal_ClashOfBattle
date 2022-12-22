@@ -12,7 +12,13 @@ class UpdatePlayerViewModel: ViewModel() {
     val api: PlayerAPI = PlayerAPI.service
     var dao = AppDatabase.INSTANCE!!.playerDao()
 
+    lateinit var unPlayer:Player
 
+    fun getPlayer(nom:String){
+        viewModelScope.launch {
+            unPlayer = dao.getUser(nom)
+        }
+    }
     fun updatePlayer(player: Player){
         viewModelScope.launch {
             //api.updateItem(player.remoteId,player)

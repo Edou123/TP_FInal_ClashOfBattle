@@ -15,8 +15,8 @@ interface PlayerDAO{
     @Update
     suspend fun update(player: Player)
 
-    @Query("SELECT * FROM Player WHERE id= :id")
-    suspend fun getUser(id: Long) : Player
+    @Query("SELECT * FROM Player WHERE name= :name")
+    suspend fun getUser(name: String) : Player
 
     @Insert
     suspend fun insertAll(trips: List<Player>)
