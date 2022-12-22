@@ -25,9 +25,5 @@ class PlayerViewModel :ViewModel(){
         }
     }
 
-    fun updatePlayer(player: Player){
-        viewModelScope.launch {
-            //api.updateItem(player.remoteId,player)
-        }
-    }
+
 }
