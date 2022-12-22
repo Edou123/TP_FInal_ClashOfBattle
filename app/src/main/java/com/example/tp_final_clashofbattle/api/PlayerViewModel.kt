@@ -19,12 +19,13 @@ class PlayerViewModel :ViewModel(){
         viewModelScope.launch {
             PlayerList = api.getItems().toListOfPlayers()
             //Rajouter le replace de la DAO
+
         }
     }
 
     fun updatePlayer(player: Player){
         viewModelScope.launch {
-            api.updateItem(player.remoteId,player)
+            //api.updateItem(player.remoteId,player)
         }
     }
 }
