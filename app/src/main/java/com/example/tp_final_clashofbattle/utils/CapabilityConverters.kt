@@ -1,4 +1,4 @@
-package com.example.democlashofbattle.utils
+package com.example.tp_final_clashofbattle.utils
 
 import androidx.room.TypeConverter
 import com.example.democlashofbattle.models.Capability

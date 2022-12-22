@@ -1,4 +1,4 @@
-package com.example.democlashofbattle.utils
+package com.example.tp_final_clashofbattle.utils
 
 import android.widget.ImageView
 import com.squareup.picasso.Picasso

@@ -1,7 +1,7 @@
 package com.example.tp_final_clashofbattle.api
 
 import com.example.democlashofbattle.models.Player
-import com.example.democlashofbattle.utils.CapabilityMoshiConverter
+import com.example.tp_final_clashofbattle.utils.CapabilityMoshiConverter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -22,8 +22,8 @@ interface PlayerAPI {
             .build()
 
         private val retrofit = Retrofit.Builder()
-            .addConverterFactory(MoshiConverterFactory.create(PlayerAPI.moshi))
-            .baseUrl(PlayerAPI.BASE_URL)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .baseUrl(BASE_URL)
             .build()
 
         val service: PlayerAPI by lazy { retrofit.create(PlayerAPI::class.java) }
