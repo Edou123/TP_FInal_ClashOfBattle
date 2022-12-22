@@ -13,14 +13,12 @@ class PlayerViewModel :ViewModel(){
     val api:PlayerAPI =PlayerAPI.service
     var dao = AppDatabase.INSTANCE!!.playerDao()
 
-    var playerList = listOf<Player>()
+    var listPlayer = dao.get()
     //À l'initialisation, on récupère les joueurs et on les met en BDD
-    init{
-        getPlayers()
-    }
+
     fun getPlayers(){
         viewModelScope.launch {
-            playerList = api.getItems().toListOfPlayers()
+            val playerList = api.getItems().toListOfPlayers()
             //Rajouter le replace de la DAO
             dao.replace(playerList)
         }
