@@ -60,7 +60,7 @@ class ListPlayersFragment : Fragment() {
         }
 
         binding.BTNModification.setOnClickListener{
-
+            findNavController().navigate(R.id.action_listPlayersFragment_to_updatePlayerFragment)
         }
 
         binding.rvPlayer.adapter = adapter
