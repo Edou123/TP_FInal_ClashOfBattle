@@ -76,6 +76,17 @@
                 tools:text="Guerrier"
                 android:layout_marginStart="10dp"
                 android:textColor="@color/red"/>
+
+            <Button
+                android:id="@+id/BTN_modification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TV_nom_classe_perso"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="10dp"
+                android:text="Modifier"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
