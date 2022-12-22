@@ -6,7 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".ListPlayersFragment">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_perso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/TV_titre_perso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Mon Personnage :"
+                android:textStyle="bold|italic"
+                android:textColor="@color/green"
+                android:textSize="20dp"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/IV_image_perso"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TV_titre_perso"
+                android:layout_margin="16dp"/>
+
+            <TextView
+                android:id="@+id/TV_nom_perso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/IV_image_perso"
+                app:layout_constraintTop_toBottomOf="@id/TV_titre_perso"
+                tools:text="Kratos" />
+
+            <TextView
+                android:id="@+id/TV_classe_perso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Classe :"
+                android:textSize="20dp"
+                android:textStyle="italic|bold"
+                app:layout_constraintStart_toEndOf="@id/IV_image_perso"
+                app:layout_constraintTop_toBottomOf="@id/TV_nom_perso" />
+
+            <TextView
+                android:id="@+id/TV_nom_classe_perso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/TV_classe_perso"
+                app:layout_constraintStart_toEndOf="@id/TV_classe_perso"
+                app:layout_constraintTop_toTopOf="@id/TV_classe_perso"
+                tools:text="Guerrier"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/red"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_player"
@@ -16,7 +87,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/card_perso">
 
     </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
