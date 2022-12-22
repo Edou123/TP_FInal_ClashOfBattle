@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.democlashofbattle.models.Job
 import com.example.democlashofbattle.models.Player
-import com.example.democlashofbattle.utils.loadImage
 import com.example.tp_final_clashofbattle.databinding.ViewCardPlayerBinding
+import com.example.tp_final_clashofbattle.utils.loadImage
 
 class PlayerAdapter(val clickListener: (String) -> Unit) : ListAdapter<Player, PlayerViewHolder>(
     PlayerDiffCallback()
