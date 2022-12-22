@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/updatePlayerFragment"
-        android:name="com.example.tp_final_clashofbattle.UpdatePlayerFragment"
+        android:name="com.example.tp_final_clashofbattle.updatePlayer.UpdatePlayerFragment"
         android:label="fragment_updateplayer"
         tools:layout="@layout/fragment_updateplayer" />
 </navigation>

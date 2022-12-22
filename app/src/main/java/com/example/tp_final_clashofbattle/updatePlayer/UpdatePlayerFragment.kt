@@ -1,4 +1,4 @@
-package com.example.tp_final_clashofbattle
+package com.example.tp_final_clashofbattle.updatePlayer
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -32,9 +32,9 @@ class UpdatePlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
+//        binding.buttonSecond.setOnClickListener {
 //            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
+//        }
     }
 
     override fun onDestroyView() {
