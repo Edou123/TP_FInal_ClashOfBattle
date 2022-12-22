@@ -33,40 +33,7 @@ class PlayerViewHolder private constructor(val binding: ViewCardPlayerBinding) :
         val capacite2 = item.capability2.type.name
         val capacite3 = item.capability3.type.name
 
-        var attaque: Int = 0
-        var defense: Int = 0
-        var soin: Int = 0
-
-        when (capacite1) {
-
-            "ATTACK" -> attaque++
-            "DEFENSE" -> defense++
-            "HEAL" -> soin++
-        }
-
-        when (capacite2) {
-
-            "ATTACK" -> attaque++
-            "DEFENSE" -> defense++
-            "HEAL" -> soin++
-        }
-
-        when (capacite3) {
-
-            "ATTACK" -> attaque++
-            "DEFENSE" -> defense++
-            "HEAL" -> soin++
-        }
-
-        if (attaque >= 2) {
-            binding.TVNomClasse.text = Job.WARRIOR.name
-        } else if (defense >= 2) {
-            binding.TVNomClasse.text = Job.KNIGHT.name
-        } else if (soin >= 2) {
-            binding.TVNomClasse.text = Job.PRIEST.name
-        }else{
-            binding.TVNomClasse.text = Job.BARD.name
-        }
+        binding.TVNomClasse.text = ClassPlayer(capacite1,capacite2,capacite3).name
 
     }
 
@@ -89,4 +56,44 @@ class PlayerDiffCallback : DiffUtil.ItemCallback<Player>() {
     }
 }
 
+fun ClassPlayer(capa1: String,capa2: String,capa3: String): Job{
+    var attaque: Int = 0
+    var defense: Int = 0
+    var soin: Int = 0
+
+    var classPlayer : Job
+
+    when (capa1) {
+
+        "ATTACK" -> attaque++
+        "DEFENSE" -> defense++
+        "HEAL" -> soin++
+    }
+
+    when (capa2) {
+
+        "ATTACK" -> attaque++
+        "DEFENSE" -> defense++
+        "HEAL" -> soin++
+    }
+
+    when (capa3) {
+
+        "ATTACK" -> attaque++
+        "DEFENSE" -> defense++
+        "HEAL" -> soin++
+    }
+
+    if (attaque >= 2) {
+        classPlayer = Job.WARRIOR
+    } else if (defense >= 2) {
+        classPlayer = Job.KNIGHT
+    } else if (soin >= 2) {
+        classPlayer = Job.PRIEST
+    }else{
+        classPlayer = Job.BARD
+    }
+
+    return  classPlayer
+}
 

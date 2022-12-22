@@ -15,7 +15,7 @@ class PlayerViewModel :ViewModel(){
 
     var listPlayer = dao.getAll()
 
-    lateinit var monPlayer:Player
+    lateinit var monPlayer:LiveData<Player>
     //À l'initialisation, on récupère les joueurs et on les met en BDD
 
     fun getPlayers(){
