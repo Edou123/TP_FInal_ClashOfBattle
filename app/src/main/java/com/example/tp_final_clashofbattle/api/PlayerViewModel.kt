@@ -14,6 +14,8 @@ class PlayerViewModel :ViewModel(){
     var dao = AppDatabase.INSTANCE!!.playerDao()
 
     var listPlayer = dao.getAll()
+
+    lateinit var monPlayer:Player
     //À l'initialisation, on récupère les joueurs et on les met en BDD
 
     fun getPlayers(){
@@ -24,6 +26,12 @@ class PlayerViewModel :ViewModel(){
         }
     }
 
+    fun getMonPlayer(nom:String)
+    {
+        viewModelScope.launch {
+            monPlayer = dao.getUser(nom)
+        }
+    }
 
 
 }
