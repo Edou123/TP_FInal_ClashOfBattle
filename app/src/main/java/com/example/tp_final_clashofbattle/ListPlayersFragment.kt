@@ -11,7 +11,7 @@ import com.example.tp_final_clashofbattle.databinding.FragmentListplayersBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class ListPlayers : Fragment() {
+class ListPlayersFragment : Fragment() {
 
     private var _binding: FragmentListplayersBinding? = null
 
@@ -33,7 +33,7 @@ class ListPlayers : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
 

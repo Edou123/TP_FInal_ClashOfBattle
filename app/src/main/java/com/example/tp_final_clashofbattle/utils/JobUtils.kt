@@ -1,11 +1,12 @@
-package com.example.democlashofbattle.utils
+package com.example.tp_final_clashofbattle.utils
+
 
 import android.content.Context
 import androidx.core.content.res.ResourcesCompat
-import com.example.democlashofbattle.R
 import com.example.democlashofbattle.models.CapabilityType
 import com.example.democlashofbattle.models.Job
 import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.R
 
 
 fun getPlayerJob(player: Player) : Job {
