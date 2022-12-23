@@ -30,5 +30,5 @@ interface PlayerDAO{
     }
 
     @Query("SELECT * FROM Player WHERE remoteId= :remoteId")
-    fun getPlayerByData(remoteId : String): LiveData<Player>
+    suspend fun getPlayerByData(remoteId: String): Player
 }

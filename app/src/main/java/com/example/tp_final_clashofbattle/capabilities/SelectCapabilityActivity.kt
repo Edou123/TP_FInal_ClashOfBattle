@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tp_final_clashofbattle.R
 import com.example.tp_final_clashofbattle.models.Capability
 
 
@@ -24,11 +25,11 @@ class SelectCapabilityActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_select_capability)
+        setContentView(R.layout.activity_select_capability)
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-//                .replace(R.id.container, SelectCapabilityFragment())
+                .replace(R.id.container, SelectCapabilityFragment())
                 .commitNow()
         }
     }

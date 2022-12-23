@@ -1,5 +1,6 @@
 package com.example.tp_final_clashofbattle.updatePlayer
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,14 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.tp_final_clashofbattle.R
 import com.example.tp_final_clashofbattle.capabilities.SelectCapabilityActivity
 import com.example.tp_final_clashofbattle.databinding.FragmentUpdateplayerBinding
 import com.example.tp_final_clashofbattle.engine.getCapabilitySuffix
+import com.example.tp_final_clashofbattle.models.Player
 import com.example.tp_final_clashofbattle.utils.getColor
 import com.example.tp_final_clashofbattle.utils.getNameId
 import com.example.tp_final_clashofbattle.utils.loadImage
+import kotlinx.coroutines.launch
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -29,15 +33,27 @@ class UpdatePlayerFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+
     private val selectCapabilityLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
         it.data?.let { intent ->
             val pair = SelectCapabilityActivity.extractResultData(intent)
             when (pair.first){
-                1-> pair.second?.let { it1 -> binding.tvCompetence1.setText(it1.getNameId()) }
-                2-> pair.second?.let { it1 -> binding.tvCompetence2.setText(it1.getNameId()) }
-                3-> pair.second?.let { it1 -> binding.tvCompetence3.setText(it1.getNameId()) }
+                1-> {
+                    pair.second?.let {it1 -> binding.tvCompetence1.setText(it1.getNameId())}
+                    pair.second?.let {it1 -> binding.tvCompetence1.setTextColor(it1.getColor(requireContext()))}
+                }
+                2-> {
+                    pair.second?.let { it1 -> binding.tvCompetence2.setText(it1.getNameId()) }
+                    pair.second?.let {it1 -> binding.tvCompetence2.setTextColor(it1.getColor(requireContext()))}
+
+                }
+                3-> {
+                    pair.second?.let { it1 -> binding.tvCompetence3.setText(it1.getNameId()) }
+                    pair.second?.let {it1 -> binding.tvCompetence3.setTextColor(it1.getColor(requireContext()))}
+
+                }
             }
         }
     }
@@ -45,17 +61,15 @@ class UpdatePlayerFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(UpdatePlayerViewModel::class.java)
-        viewModel.getPlayer("Edouard")
+//        viewModel.getPlayer("Edouard")
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentUpdateplayerBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -73,20 +87,42 @@ class UpdatePlayerFragment : Fragment() {
             binding.tvCompetence3.setTextColor(it.capability1.getColor(requireContext()))
         }
 
+        binding.bModifierCompetence1.setOnClickListener{
+            selectCapabilityLauncher.launch(
+                SelectCapabilityActivity.newIntent(
+                    requireContext(),
+                    1
+                )
+            )
+        }
 
+        binding.bModifierCompetence2.setOnClickListener{
+            selectCapabilityLauncher.launch(
+                SelectCapabilityActivity.newIntent(
+                    requireContext(),
+                    2
+                )
+            )
+        }
 
+        binding.bModifierCompetence3.setOnClickListener{
+            selectCapabilityLauncher.launch(
+                SelectCapabilityActivity.newIntent(
+                    requireContext(),
+                    3
+                )
+            )
+        }
 
-
-
-//        binding.bValider.setOnClickListener{
-//            val updatePlayer = Player(
-//                name = binding.etNomPlayer.text.toString(),
-//                imageUrl = binding.etUrlImagePlayer.text.toString(),
-//                capability1 = binding.
-//                capability2 = binding.tvCompetence2,
-//                capability3 = binding.tvCompetence3,
-//                )
-//        }
+        binding.bValider.setOnClickListener{
+            lifecycleScope.launch {
+                viewModel.validate(
+                    binding.etNomPlayer.text.toString(),
+                    binding.etUrlImagePlayer.text.toString()
+                )
+                findNavController().popBackStack()
+            }
+        }
 
     }
 
