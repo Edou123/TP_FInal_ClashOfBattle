@@ -1,10 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/IV_image_adversaire"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_nom_adversaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/IV_image_adversaire"
+        app:layout_constraintTop_toTopOf="@id/IV_image_adversaire"
+        tools:text="Kratos" />
+
+    <ProgressBar
+        android:id="@+id/PB_vie_adversaire"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toEndOf="@id/IV_image_adversaire"
+        app:layout_constraintTop_toBottomOf="@id/TV_nom_adversaire" />
+
+    <TextView
+        android:id="@+id/TV_vie_adversaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/PB_vie_adversaire"
+        app:layout_constraintStart_toEndOf="@id/PB_vie_adversaire"
+        app:layout_constraintTop_toTopOf="@id/PB_vie_adversaire"
+        tools:text="50/50" />
 
 
+    <ImageView
+        android:id="@+id/IV_image_perso"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TV_vie_adversaire" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/TV_nom_perso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/IV_image_perso"
+        app:layout_constraintTop_toTopOf="@id/IV_image_perso"
+        tools:text="Papi" />
+
+    <ProgressBar
+        android:id="@+id/PB_vie_perso"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toStartOf="@id/IV_image_perso"
+        app:layout_constraintTop_toBottomOf="@id/TV_nom_perso"/>
+
+    <TextView
+        android:id="@+id/TV_vie_perso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toStartOf="@id/PB_vie_perso"
+        app:layout_constraintTop_toTopOf="@id/PB_vie_perso"
+        app:layout_constraintBottom_toBottomOf="@id/PB_vie_perso"
+        tools:text="50/50" />
+
+    <TextView
+        android:id="@+id/TV_dialogue_combat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/IV_image_perso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/BTN_competence_3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="PARADE PRECISE"/>
+
+    <Button
+        android:id="@+id/BTN_competence_2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/BTN_competence_3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="DOUBLE PARADE"/>
+    <Button
+        android:id="@+id/BTN_competence_1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/BTN_competence_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="PARADE RISQUE"/>
+    <Button
+        android:id="@+id/BTN_attaque_simple"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/BTN_competence_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="ATTAQUE SIMPLE"
+        android:backgroundTint="@color/red"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/BTN_attaque_simple"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
