@@ -8,7 +8,11 @@
         android:id="@+id/updatePlayerFragment"
         android:name="com.example.tp_final_clashofbattle.updatePlayer.UpdatePlayerFragment"
         android:label="fragment_updateplayer"
-        tools:layout="@layout/fragment_updateplayer" />
+        tools:layout="@layout/fragment_updateplayer" >
+        <action
+            android:id="@+id/action_updatePlayerFragment_to_selectCapabilityFragment"
+            app:destination="@id/selectCapabilityFragment" />
+    </fragment>
     <fragment
         android:id="@+id/listPlayersFragment"
         android:name="com.example.tp_final_clashofbattle.ListPlayersFragment"
@@ -18,4 +22,8 @@
             android:id="@+id/action_listPlayersFragment_to_updatePlayerFragment"
             app:destination="@id/updatePlayerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/selectCapabilityFragment"
+        android:name="com.example.tp_final_clashofbattle.capabilities.SelectCapabilityFragment"
+        android:label="SelectCapabilityFragment" />
 </navigation>
