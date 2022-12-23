@@ -21,9 +21,16 @@
         <action
             android:id="@+id/action_listPlayersFragment_to_updatePlayerFragment"
             app:destination="@id/updatePlayerFragment" />
+        <action
+            android:id="@+id/action_listPlayersFragment_to_battleFragment"
+            app:destination="@id/battleFragment" />
     </fragment>
     <fragment
         android:id="@+id/selectCapabilityFragment"
         android:name="com.example.tp_final_clashofbattle.capabilities.SelectCapabilityFragment"
         android:label="SelectCapabilityFragment" />
+    <fragment
+        android:id="@+id/battleFragment"
+        android:name="com.example.tp_final_clashofbattle.battle.BattleFragment"
+        android:label="BattleFragment" />
 </navigation>
