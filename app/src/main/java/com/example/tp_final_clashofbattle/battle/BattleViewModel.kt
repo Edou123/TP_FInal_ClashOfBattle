@@ -31,15 +31,15 @@ class BattleViewModel: ViewModel() {
         viewModelScope.launch {
             val myPlayer = dao.getPlayerByData("Edouard")
             val opponent = dao.getPlayerByData("Adrien")
-            myPlayerInfo.value = myPlayer.value
-            opponentInfo.value = opponent.value
-
-            myPlayerBattleInfo.value = PlayerBattleInfo(
-                remainingCapabilities = myPlayer.value!!.capabilities
-            )
-            opponentBattleInfo.value = PlayerBattleInfo(
-                remainingCapabilities = opponent.value!!.capabilities
-            )
+//            myPlayerInfo.value = myPlayer.value
+//            opponentInfo.value = opponent.value
+//
+//            myPlayerBattleInfo.value = PlayerBattleInfo(
+//                remainingCapabilities = myPlayer.value!!.capabilities
+//            )
+//            opponentBattleInfo.value = PlayerBattleInfo(
+//               remainingCapabilities = opponent.value!!.capabilities
+//            )
         }
     }
     fun round(cap:Capability?){
