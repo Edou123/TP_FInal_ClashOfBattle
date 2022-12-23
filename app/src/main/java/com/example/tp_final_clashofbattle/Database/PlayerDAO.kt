@@ -14,8 +14,8 @@ interface PlayerDAO{
     @Update
     suspend fun update(player: Player)
 
-    @Query("SELECT * FROM Player WHERE name= :name")
-    fun getUser(name: String) : LiveData<Player>
+    @Query("SELECT * FROM Player WHERE remoteId= :remoteId")
+    fun getUser(remoteId: String) : LiveData<Player>
 
     @Insert
     suspend fun insertAll(trips: List<Player>)

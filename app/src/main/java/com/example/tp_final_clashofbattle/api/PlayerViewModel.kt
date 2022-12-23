@@ -8,17 +8,17 @@ import com.example.tp_final_clashofbattle.Database.AppDatabase
 import com.example.tp_final_clashofbattle.utils.toListOfPlayers
 import kotlinx.coroutines.launch
 
-class PlayerViewModel :ViewModel(){
+class PlayerViewModel : ViewModel() {
 
-    val api:PlayerAPI =PlayerAPI.service
+    val api: PlayerAPI = PlayerAPI.service
     var dao = AppDatabase.INSTANCE!!.playerDao()
 
     var listPlayer = dao.getAll()
 
-    lateinit var monPlayer:LiveData<Player>
+    lateinit var monPlayer: LiveData<Player>
     //À l'initialisation, on récupère les joueurs et on les met en BDD
 
-    fun getPlayers(){
+    fun getPlayers() {
         viewModelScope.launch {
             val playerList = api.getItems().toListOfPlayers()
             //Rajouter le replace de la DAO
@@ -26,11 +26,8 @@ class PlayerViewModel :ViewModel(){
         }
     }
 
-    fun getMonPlayer(nom:String)
-    {
-        viewModelScope.launch {
-            monPlayer = dao.getUser(nom)
-        }
+    fun getMonPlayer(nom: String) {
+        monPlayer = dao.getUser(nom)
     }
 
 
