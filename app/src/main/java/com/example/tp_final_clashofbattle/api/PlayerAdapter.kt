@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.democlashofbattle.models.Job
-import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.models.Job
+import com.example.tp_final_clashofbattle.models.Player
 import com.example.tp_final_clashofbattle.databinding.ViewCardPlayerBinding
 import com.example.tp_final_clashofbattle.utils.loadImage
 
@@ -56,7 +56,7 @@ class PlayerDiffCallback : DiffUtil.ItemCallback<Player>() {
     }
 }
 
-fun ClassPlayer(capa1: String,capa2: String,capa3: String): Job{
+fun ClassPlayer(capa1: String,capa2: String,capa3: String): Job {
     var attaque: Int = 0
     var defense: Int = 0
     var soin: Int = 0

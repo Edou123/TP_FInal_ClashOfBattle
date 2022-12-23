@@ -5,11 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import androidx.sqlite.db.SupportSQLiteDatabase
-import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.models.Player
 import com.example.tp_final_clashofbattle.utils.CapabilityRoomConverter
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 @Database(entities = arrayOf(Player::class), version = 1)
 @TypeConverters(CapabilityRoomConverter::class)

@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.democlashofbattle.models.Capability
+import com.example.tp_final_clashofbattle.models.Capability
 
 
 class SelectCapabilityActivity : AppCompatActivity() {

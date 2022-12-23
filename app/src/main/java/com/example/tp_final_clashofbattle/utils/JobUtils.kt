@@ -3,9 +3,9 @@ package com.example.tp_final_clashofbattle.utils
 
 import android.content.Context
 import androidx.core.content.res.ResourcesCompat
-import com.example.democlashofbattle.models.CapabilityType
-import com.example.democlashofbattle.models.Job
-import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.models.CapabilityType
+import com.example.tp_final_clashofbattle.models.Job
+import com.example.tp_final_clashofbattle.models.Player
 import com.example.tp_final_clashofbattle.R
 
 

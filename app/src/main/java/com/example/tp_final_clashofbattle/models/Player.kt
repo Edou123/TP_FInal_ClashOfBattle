@@ -1,4 +1,4 @@
-package com.example.democlashofbattle.models
+package com.example.tp_final_clashofbattle.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

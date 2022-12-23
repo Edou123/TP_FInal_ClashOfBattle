@@ -3,7 +3,7 @@ package com.example.tp_final_clashofbattle.api
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.models.Player
 import com.example.tp_final_clashofbattle.Database.AppDatabase
 import com.example.tp_final_clashofbattle.utils.toListOfPlayers
 import kotlinx.coroutines.launch

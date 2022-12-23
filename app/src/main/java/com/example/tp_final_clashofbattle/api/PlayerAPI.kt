@@ -1,6 +1,6 @@
 package com.example.tp_final_clashofbattle.api
 
-import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.models.Player
 import com.example.tp_final_clashofbattle.utils.CapabilityMoshiConverter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

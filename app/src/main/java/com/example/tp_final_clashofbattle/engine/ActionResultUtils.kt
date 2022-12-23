@@ -1,9 +1,9 @@
 package com.example.tp_final_clashofbattle.engine
 
 import android.content.Context
-import com.example.democlashofbattle.models.Capability
-import com.example.democlashofbattle.models.CapabilityType
-import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.models.Capability
+import com.example.tp_final_clashofbattle.models.CapabilityType
+import com.example.tp_final_clashofbattle.models.Player
 import com.example.tp_final_clashofbattle.utils.getNameId
 
 fun getTextForActionResult(context: Context, player: Player, actionResult: ActionResult) : String {

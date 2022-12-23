@@ -1,9 +1,8 @@
 package com.example.tp_final_clashofbattle.Database
 
-import android.text.method.TextKeyListener.clear
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.democlashofbattle.models.Player
+import com.example.tp_final_clashofbattle.models.Player
 
 
 @Dao

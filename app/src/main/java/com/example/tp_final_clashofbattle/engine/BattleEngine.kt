@@ -1,7 +1,8 @@
 package com.example.tp_final_clashofbattle.engine
 
-import com.example.democlashofbattle.models.Capability
-import com.example.democlashofbattle.models.CapabilityType
+import com.example.tp_final_clashofbattle.models.Capability
+import com.example.tp_final_clashofbattle.models.CapabilityType
+
 
 class BattleEngine(private val randomGenerator: RandomGenerator) {
 

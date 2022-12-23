@@ -1,6 +1,6 @@
 package com.example.tp_final_clashofbattle.engine
 
-import com.example.democlashofbattle.models.Capability
+import com.example.tp_final_clashofbattle.models.Capability
 
 data class ActionResult(
     val damage: Int = 0,
