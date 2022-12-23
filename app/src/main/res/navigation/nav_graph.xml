@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
+    android:label="Selection des Capacités"
     app:startDestination="@id/listPlayersFragment">
     <fragment
         android:id="@+id/updatePlayerFragment"
         android:name="com.example.tp_final_clashofbattle.updatePlayer.UpdatePlayerFragment"
-        android:label="fragment_updateplayer"
-        tools:layout="@layout/fragment_updateplayer" >
+        android:label="Modification du Joueur"
+        tools:layout="@layout/fragment_updateplayer">
         <action
             android:id="@+id/action_updatePlayerFragment_to_selectCapabilityFragment"
             app:destination="@id/selectCapabilityFragment" />
@@ -16,8 +17,8 @@
     <fragment
         android:id="@+id/listPlayersFragment"
         android:name="com.example.tp_final_clashofbattle.ListPlayersFragment"
-        android:label="fragment_listplayers"
-        tools:layout="@layout/fragment_listplayers" >
+        android:label="Listes des Joueurs"
+        tools:layout="@layout/fragment_listplayers">
         <action
             android:id="@+id/action_listPlayersFragment_to_updatePlayerFragment"
             app:destination="@id/updatePlayerFragment" />
@@ -32,5 +33,5 @@
     <fragment
         android:id="@+id/battleFragment"
         android:name="com.example.tp_final_clashofbattle.battle.BattleFragment"
-        android:label="BattleFragment" />
+        android:label="Combat !" />
 </navigation>
